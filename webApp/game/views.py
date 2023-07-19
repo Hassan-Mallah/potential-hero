@@ -8,6 +8,10 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def index(request: HttpRequest):
     print(request.POST)
+    context = {
+        'question': 'Which weapon would do you like to use?',
+        'answers': ['Axe', 'Gun', 'Sword']
+    }
 
     template = loader.get_template('index.html')
-    return HttpResponse(template.render({}))
+    return HttpResponse(template.render(context))

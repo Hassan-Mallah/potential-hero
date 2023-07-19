@@ -14,25 +14,18 @@
 <div class="container mt-3">
 
     <h1>Hello, world!</h1>
-    <label class="form-check-label">
-        This is bootstrap 5.3.0
-    </label>
-
 
     <form action="." method="post">
-        <label class="form-label">radio</label>
+        <label class="form-label">{{ question }}</label>
+        {% for i in answers %}
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="one">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Answer One
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value={{ i }}>
+            <label class="form-check-label">
+                {{ i }}
             </label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked value="two">
-            <label class="form-check-label" for="flexRadioDefault2">
-                Answer Two
-            </label>
-        </div>
+        {% endfor %}
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
