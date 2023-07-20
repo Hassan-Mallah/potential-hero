@@ -16,17 +16,24 @@
     <h1>Hello, world!</h1>
 
     <form action="." method="post">
+        {% if text %}
+        <label class="form-label">{{ text }}</label>
+        {% else %}
         <label class="form-label">{{ question }}</label>
+
         {% for i in answers %}
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" value={{ i }}>
+            <input class="form-check-input" type="radio" name="Radio" value={{ i }}>
             <label class="form-check-label">
                 {{ i }}
             </label>
         </div>
         {% endfor %}
+        {% endif %}
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="gird">
+            <button type="submit" class="btn btn-primary" name="button" value="submit">Submit</button>
+        </div>
     </form>
 </div>
 </body>
