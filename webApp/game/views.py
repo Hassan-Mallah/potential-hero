@@ -3,7 +3,8 @@ from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 
 
-# Create your views here.
+story_steps = []
+api_key = ''
 
 @csrf_exempt
 def index(request: HttpRequest):
